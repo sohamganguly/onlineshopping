@@ -7,15 +7,70 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>OnlineShop Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  
+  <properties>
+  	<spring.version>4.3.6.RELEASE</spring.version>
+  </properties>
+  
+  
   <dependencies>
+  
+  	<!-- JAVA API for Javax Servlet Error-->
+  	
+  	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>4.0.1</version>
+	    <scope>provided</scope>
+	</dependency>
+
+  	<!-- JUNIT -->
+  	
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- Spring -->
+    
+  
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- JSTL -->
+    
+  
+	<dependency>
+	    <groupId>jstl</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+    
+   
+    
+    
   </dependencies>
   <build>
+  <!-- Maven Support for Java v10 -->
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-compiler-plugin</artifactId>
+        	<version>3.8.0</version>
+        	<configuration>
+        		<release>10</release>
+        		
+        	</configuration>
+  		</plugin>
+  	</plugins>
     <finalName>OnlineShop</finalName>
   </build>
 </project>
